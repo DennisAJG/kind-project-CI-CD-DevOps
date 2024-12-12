@@ -14,4 +14,7 @@ create:
 destroy:
 	@kind delete clusters kind 
 
-up: create pre
+helm:
+	@helmfile apply
+
+up: create pre helm

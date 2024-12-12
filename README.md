@@ -52,7 +52,7 @@ O arquivo de configuração está em /manifests/metallb-pool.yaml
 Usando helm:
 $ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
-$ helm upgrade --install --namespace ingress-nginx --create-namespace -f values/ingress-nginx/values.yaml ingress-nginx ingress-nginx/ingress-nginx
+$ helm upgrade --install --namespace ingress-nginx --create-namespace -f /helm-project/values/ingress-nginx/values.yaml ingress-nginx ingress-nginx/ingress-nginx
 
 
 
