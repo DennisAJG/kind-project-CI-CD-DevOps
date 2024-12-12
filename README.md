@@ -103,3 +103,8 @@ Principais configurações no values do harbor:
 
 caminho do values.yaml:
 helm-project/values/sonarqube/values.yaml
+
+Principais configurações no values do harbor:
+1 - ingress: enabled: false
+2 - hosts: - name: sonarqube.localhost.com
+3 - ingressClassName: nginx
