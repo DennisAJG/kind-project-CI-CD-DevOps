@@ -66,3 +66,16 @@ Principais configurações no values do jenkins:
 2 - ingressClassName: nginx
 3 - hostName: jenkins.localhost.com
 
+
+---------------------------------------------------------------
+
+## Uso do Gitea via helm
+
+Caminho do values.yaml:
+helm-project/values/gitea/values.yaml
+helm-project/values/gitea/secret-gitea.yaml
+
+Principais configurações no values do gitea:
+1 - ingress: enabled: true
+2 - ClassName: nginx
+3 - hosts: - host: gitea.localhost.com

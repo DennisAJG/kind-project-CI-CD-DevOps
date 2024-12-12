@@ -15,3 +15,7 @@ $ kubectl get services -n ingress-nginx -> lista o service do nginx que é do ti
 $ kubectl get ingress -n jenkins -> verifica o ingress do jenkins
 
 $ kubectl get ingressClass -> lista as classes do ingress dentro do cluster
+
+$ kubectl logs name_pod -n namespace -> valida os logs de um determinado pods de uma namespace
+
+$ kubectl logs name_pod -n namespace -c parametrer -> a opção -c é usado para executar parametros passados pelo log 
