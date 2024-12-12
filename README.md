@@ -35,9 +35,8 @@ $ for container in $(docker ps --filter "label=io.x-k8s.kind.role=worker" -q); d
 A forma que eu usei é usando o DaemonSet
 Caminho do daemonset para o setup-hosts
 /manifests/setup-hosts.yaml
-------------------------------------------------------------
 
-## Configuração e uso do ###Metallb:
+## Configuração e uso do Metallb:
 Usei o modo L2 leader 
 
 Instalação via manifesto:
@@ -47,6 +46,14 @@ Foi atomatizado no makefile
 
 O arquivo de configuração está em /manifests/metallb-pool.yaml
 
----------------------------------------------------------------
+----------------------------------------------------------------
+## Uso do Ingress-Nginx-Controller
+
+Usando helm:
+$ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+
+$ helm upgrade --install --namespace ingress-nginx --create-namespace -f values/ingress-nginx/values.yaml ingress-nginx ingress-nginx/ingress-nginx
+
+
 
 

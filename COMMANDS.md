@@ -9,3 +9,5 @@ $ kubectl get cm -n kube-system kube-proxy -oyaml -> faz o processo de exportaç
 $ kubectl get cm -n kube-system -> comando usado para listar os ConfigMaps da namespace kube-system. 
 
 $ kubectl get ns -> lista todas as namespaces do cluster
+
+$ kubectl get services -n ingress-nginx -> lista o service do nginx que é do tipo LoadBalancer
