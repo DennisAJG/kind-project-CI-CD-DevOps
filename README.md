@@ -126,3 +126,17 @@ Principais configurações no values do argoCD:
 
 Comando para coletar a senha do admin:
 $ kubectl get secret -n argocd argocd-initial-admin-secret -ojson | jq -r '.data.password' | base64 -d
+
+
+----------------------------------------------------------------
+
+## Uso do Imagepullsecret-patcher via helm
+É usado para:
+Para um pod conseguir utilizar uma imagem de um registry privado, ele precisa de um secret. Só que o secret ele é por namespace, então oque o imagepullsecret faz:
+ele pega um secret central, e replica para toda as namespaces.
+
+Caminho do values.yaml:
+helm-project/values/imagepullsecret-patcher/values.yaml
+
+Principais configurações no values do argoCD:
+1 - secretName: "harbor-credentials"

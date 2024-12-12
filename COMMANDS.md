@@ -21,3 +21,5 @@ $ kubectl logs name_pod -n namespace -> valida os logs de um determinado pods de
 $ kubectl logs name_pod -n namespace -c parametrer -> a opção -c é usado para executar parametros passados pelo log 
 
 $ kubectl get ingress -A -> lista todos os ingress de todas as namespaces
+
+$ kubectl describe pod -n namespace  pod_name -> mostra mais detalhes de um pod especifico.
