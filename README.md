@@ -54,6 +54,8 @@ $ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
 $ helm upgrade --install --namespace ingress-nginx --create-namespace -f /helm-project/values/ingress-nginx/values.yaml ingress-nginx ingress-nginx/ingress-nginx
 
+Principais configurações no values do ingress-nginx:
+1 - tcp: 22: "gitea/gitea-ssh:22" 
 ----------------------------------------------------------------
 
 ## Uso do Jenkins via helm
@@ -65,9 +67,13 @@ Principais configurações no values do jenkins:
 1 - ingress: enabled: true
 2 - ingressClassName: nginx
 3 - hostName: jenkins.localhost.com
+4 - additionalPlugins: - pipeline-stage-view - multibranch-scan-webhook-trigger - basic-branch-build-strategies - discord-notifier
+5 - hostAliases: - ip: 172.20.0.50 hostnames: - gitea.localhost.com
 
 Comando para coletar a senha do admin:
 $ kubectl get secret -n jenkins jenkins -ojson | jq -r '.data."jenkins-admin-password"' | base64 -d
+
+
 
 ---------------------------------------------------------------
 
@@ -80,7 +86,13 @@ helm-project/values/gitea/secret-gitea.yaml
 Principais configurações no values do gitea:
 1 - ingress: enabled: true
 2 - ClassName: nginx
-3 - hosts: - host: gitea.localhost.com
+3 - hosts: - host: gitea.localhost.com 
+
+## Configuração do gitea:
+
+Criado uma organization chamada project-devsecops
+foi criado um user de serviço chamado jenkins que foi associado ao grupo devops. 
+foi vinculado uma chave ssh tanto pro user admin quanto pro user jenkins 
 
 
 ----------------------------------------------------------------
