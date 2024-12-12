@@ -19,3 +19,5 @@ $ kubectl get ingressClass -> lista as classes do ingress dentro do cluster
 $ kubectl logs name_pod -n namespace -> valida os logs de um determinado pods de uma namespace
 
 $ kubectl logs name_pod -n namespace -c parametrer -> a opção -c é usado para executar parametros passados pelo log 
+
+$ kubectl get ingress -A -> lista todos os ingress de todas as namespaces

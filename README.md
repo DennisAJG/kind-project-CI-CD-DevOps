@@ -66,6 +66,8 @@ Principais configurações no values do jenkins:
 2 - ingressClassName: nginx
 3 - hostName: jenkins.localhost.com
 
+Comando para coletar a senha do admin:
+$ kubectl get secret -n jenkins jenkins -ojson | jq -r '.data."jenkins-admin-password"' | base64 -d
 
 ---------------------------------------------------------------
 
