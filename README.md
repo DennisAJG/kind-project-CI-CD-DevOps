@@ -32,5 +32,20 @@ Comando bash usado para incluir em todos os nodes do cluster:
 $ for container in $(docker ps --filter "label=io.x-k8s.kind.role=worker" -q); do docker exec $container bash -c "echo '172.20.0.50     argocd.localhost.com jenkins.localhost.com gitea.localhost.com sonarqube.localhost.com harbor.localhost.com api.localhost.com appliferay.localhost.com' >> /etc/hosts"; done
 
 ### A forma que eu usei é usando o DaemonSet
-
+Caminho do daemonset para o setup-hosts
+/manifests/setup-hosts.yaml
 --------------------------------------------------------------
+
+###Configuração e uso do ###Metallb:
+Usei o modo L2 leader 
+
+Instalação via manifesto:
+$ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.3/config/manifests/metallb-native.yaml
+
+Foi atomatizado no makefile 
+
+O arquivo de configuração está em /manifests/metallb-pool.yaml
+
+---------------------------------------------------------------
+
+
