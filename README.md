@@ -22,6 +22,8 @@ Incluir hostnames no /etc/hosts para resolução de nomes local
 dentro do /etc/hosts:
 
 DNS Kubernets
+
+
 172.20.0.50     argocd.localhost.com jenkins.localhost.com gitea.localhost.com sonarqube.localhost.com harbor.localhost.com api.localhost.com appliferay.localhost.com
 
 Foi incluido em todos os nodes do cluster kind 
