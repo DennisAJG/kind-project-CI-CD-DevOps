@@ -11,3 +11,7 @@ $ kubectl get cm -n kube-system -> comando usado para listar os ConfigMaps da na
 $ kubectl get ns -> lista todas as namespaces do cluster
 
 $ kubectl get services -n ingress-nginx -> lista o service do nginx que é do tipo LoadBalancer
+
+$ kubectl get ingress -n jenkins -> verifica o ingress do jenkins
+
+$ kubectl get ingressClass -> lista as classes do ingress dentro do cluster

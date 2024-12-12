@@ -54,6 +54,15 @@ $ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
 $ helm upgrade --install --namespace ingress-nginx --create-namespace -f /helm-project/values/ingress-nginx/values.yaml ingress-nginx ingress-nginx/ingress-nginx
 
+----------------------------------------------------------------
 
+## Uso do Jenkins via helm
 
+Caminho do values.yaml:
+helm-project/values/jenkins/values.yaml
+
+Principais configurações no values do jenkins:
+1 - ingress: enabled: true
+2 - ingressClassName: nginx
+3 - hostName: jenkins.localhost.com
 
