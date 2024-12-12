@@ -81,3 +81,25 @@ Principais configurações no values do gitea:
 1 - ingress: enabled: true
 2 - ClassName: nginx
 3 - hosts: - host: gitea.localhost.com
+
+
+----------------------------------------------------------------
+
+## Uso do Harbor via helm
+
+caminho do values.yaml:
+helm-project/values/harbor/values.yaml
+
+Principais configurações no values do harbor:
+1 - expose: type: ingress
+2 - tls: enabled: false
+3 - ingress: hosts: core: harbor.localhost.com
+4 - externalURL: http://harbor.localhost.com
+5 - className: "nginx"
+
+----------------------------------------------------------------
+
+## Uso do SonarQube via helm
+
+caminho do values.yaml:
+helm-project/values/sonarqube/values.yaml
