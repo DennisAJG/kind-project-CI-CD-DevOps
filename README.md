@@ -104,7 +104,25 @@ Principais configurações no values do harbor:
 caminho do values.yaml:
 helm-project/values/sonarqube/values.yaml
 
-Principais configurações no values do harbor:
+Principais configurações no values do sonarqube:
 1 - ingress: enabled: false
 2 - hosts: - name: sonarqube.localhost.com
 3 - ingressClassName: nginx
+
+
+----------------------------------------------------------------
+
+## Uso do ArgoCD via helm
+
+caminho do values.yaml:
+helm-project/values/argocd/values.yaml
+
+Principais configurações no values do argoCD:
+1 - ingress: enabled: true
+2 - ingressClassName: "nginx"
+3 - tls: false
+4 - server.insecure: true -> vai rodar sem tls
+5 - hostname: "argocd.localhost.com"
+
+Comando para coletar a senha do admin:
+$ kubectl get secret -n argocd argocd-initial-admin-secret -ojson | jq -r '.data.password' | base64 -d
