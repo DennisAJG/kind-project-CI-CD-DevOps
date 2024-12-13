@@ -152,3 +152,22 @@ helm-project/values/imagepullsecret-patcher/values.yaml
 
 Principais configurações no values do argoCD:
 1 - secretName: "harbor-credentials"
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Trabalhando com Gitflow 
+
+dentro do jenkins, utilizei o conceito de when delimitando apenas que rode as pipelines com determinadas branchs. 
+
+Regras:
+No Jenkinsfile eu usei a clausula when, onde delimito pelas tais branchs:
+"feature-*"
+"develop"
+"hotfix-*"
+"release-*"
+"v*"
+
+No Jenkins eu habilito nas configurações os parametros:
+1 - Behaviours -> Filter by name (with regular expression) as expressões:
+^(feature|develop|hotfix|release|v).*
