@@ -177,7 +177,28 @@ No Jenkins eu habilito nas configurações os parametros:
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------## Trabalhando com Jenkins-shared-libraries:
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+## Trabalhando com Jenkins-shared-libraries:
 
 link de referência:
 https://www.jenkins.io/doc/book/pipeline/shared-libraries/
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+## Trabalhando com o Sonarqube
+
+utilizei o sonar-scanner-ci via docker:
+
+$ docker run \
+--env SONAR_HOST_URL=http://sonarqube.localhost.com \
+--env SONAR_LOGIN="sqa_73db29f64a89fc2635ba53f1ce2742f1348012d7" \
+--env SONAR_SCANNER_OPTS="-Dsonar.projectKey=test" \
+--network kind \
+--volume $(pwd):/usr/src \
+--add-host sonarqube.localhost.com:172.20.0.50 \
+sonarsource/sonar-scanner-cli:5.0.1
+
+Foi usado também o qualitygate para realizar testes do codi smell 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Uso do Kaniko para build 
