@@ -160,6 +160,9 @@ Principais configurações no values do argoCD:
 
 dentro do jenkins, utilizei o conceito de when delimitando apenas que rode as pipelines com determinadas branchs. 
 
+Link de referência:
+https://www.jenkins.io/doc/book/pipeline/syntax/#when
+
 Regras:
 No Jenkinsfile eu usei a clausula when, onde delimito pelas tais branchs:
 "feature-*"
@@ -171,3 +174,10 @@ No Jenkinsfile eu usei a clausula when, onde delimito pelas tais branchs:
 No Jenkins eu habilito nas configurações os parametros:
 1 - Behaviours -> Filter by name (with regular expression) as expressões:
 ^(feature|develop|hotfix|release|v).*
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------## Trabalhando com Jenkins-shared-libraries:
+
+link de referência:
+https://www.jenkins.io/doc/book/pipeline/shared-libraries/
